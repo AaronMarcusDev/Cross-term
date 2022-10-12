@@ -65,7 +65,7 @@ fn run_repl(platform: &str) {
                 "cwd" => println!("{}", current_directory.display()),
                 "date" => println!("{}", Local::now().format("%Y-%m-%d %H:%M:%S")),
                 "tasks" => println!("{}", cmd("tasklist")),
-                "tree" => println!("{}", cmd("tree")),
+                "tree" => println!("{}", cmd("ls -R")),
                 unknown => cmd_and_state(unknown),
             };
         }
