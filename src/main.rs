@@ -9,8 +9,6 @@ fn main() {
         run_repl("windows");
     } else if cfg!(unix) {
         println!("UNIX not implemented yet.");
-    } else {
-        println!("MacOS not implemented yet.");
     }
 }
 
@@ -30,7 +28,6 @@ fn run_repl(platform: &str) {
         let command = parts.next().unwrap();
         let args = parts;
         // println!("{}", command);
-        // println!("{:?}", args);
 
         if platform == "windows" {
             match &command as &str {
@@ -47,6 +44,12 @@ fn run_repl(platform: &str) {
                 "cwd" => println!("{}", current_directory.display()),
                 "date" => println!("{}", Local::now().format("%Y-%m-%d %H:%M:%S")),
                 "tasks" => println!("{}", cmd("tasklist")),
+                "del" => println!("{}", cmd_with_args("del", args.collect::<Vec<&str>>()[0])),
+                "touch" => println!(
+                    "{}",
+                    cmd_with_args("type nul >", args.collect::<Vec<&str>>()[0])
+                ),
+                "cat" => println!("{}", cmd_with_args("type", args.collect::<Vec<&str>>()[0])),
                 unknown => cmd_and_state(unknown),
             };
         } else if platform == "unix" {
