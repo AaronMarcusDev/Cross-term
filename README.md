@@ -14,4 +14,6 @@ cwd> ls
 What is being executed on the backgroud:
 | Windows | Unix|
 | --------------- | --------------- |
-| dir | ls | Row 1 Column 3 |
+| dir | ls |
+
+Note: All commands that are not recognized, will be executed as a system command.
