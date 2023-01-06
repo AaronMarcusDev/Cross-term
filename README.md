@@ -1,6 +1,9 @@
 # cross-term
  A cross-platform terminal emulator.
 
+## NOTE
+THis project has been replaced by [PATE](https://github.com/AaronMarcusDev/PATE).
+
 ### Why?
 So you can focus on getting tasks done rather then remembering commands for every operating system.
 
